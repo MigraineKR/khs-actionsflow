@@ -1,0 +1,17 @@
+name: Send a Discord message when new RSS feeds update
+on:
+  rss:
+    url: ${{ secrets.MIGRAINECLUSTER_RSSFEED_EVENT }}
+jobs:
+  discord:
+    name: Send a message to discord
+    runs-on: ubuntu-latest
+    steps:
+      - name: Discord notification
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.MIGRAINECLUSTER_WEBHOOK_EVENT }}
+          DISCORD_USERNAME: ${{ secrets.MIGRAINECLUSTER_USERNAME }}
+          DISCORD_AVATAR: ${{ secrets.MIGRAINECLUSTER_AVATAR }}
+        uses: Ilshidur/action-discord@master
+        with:
+          args: "'`'두통없는 행복한 세상 - 두통나눔이야기 - 행사 및 소식'`''\n'**${{on.rss.outputs.title}}**'\n'${{on.rss.outputs.link}}"
