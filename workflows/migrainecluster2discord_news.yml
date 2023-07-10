@@ -14,4 +14,4 @@ jobs:
           DISCORD_AVATAR: ${{ secrets.MIGRAINECLUSTER_AVATAR }}
         uses: Ilshidur/action-discord@master
         with:
-          args: "'`'두통없는 행복한 세상 - 두통나눔이야기 - 두통 관련 뉴스'`''\n'**${{on.rss.outputs.title}}**'\n'${{on.rss.outputs.link}}"
+          args: "'`'두통없는 행복한 세상 - 두통나눔이야기 - 두통 관련 뉴스 📰'`''\n'**${{on.rss.outputs.title}}**'\n'${{on.rss.outputs.link}}"
