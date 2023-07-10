@@ -10,8 +10,8 @@ jobs:
       - name: Discord notification
         env:
           DISCORD_WEBHOOK: ${{ secrets.MIGRAINECLUSTER_WEBHOOK_NEWS }}
-          DISCORD_USERNAME: ${{ secrets.MIGRAINECLUSTER_USERNAME_NEWS }}
-          DISCORD_AVATAR: ${{ secrets.MIGRAINECLUSTER_AVATAR_NEWS }}
+          DISCORD_USERNAME: ${{ secrets.MIGRAINECLUSTER_USERNAME }}
+          DISCORD_AVATAR: ${{ secrets.MIGRAINECLUSTER_AVATAR }}
         uses: Ilshidur/action-discord@master
         with:
           args: "'`'두통없는 행복한 세상 - 두통나눔이야기 - 두통 관련 뉴스'`''\n'**${{on.rss.outputs.title}}**'\n'${{on.rss.outputs.link}}"
